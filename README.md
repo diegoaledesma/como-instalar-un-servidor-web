@@ -128,7 +128,7 @@ $ cd /home/dev/bluehorse-crud-php
 Copiamos nuesto Virtual Host de apache
 
 ```
-$ sudo cp bh/apache-conf/site.conf /etc/apache2/site/etc/apache2/sites-available/
+$ sudo cp bh/apache-conf/site.conf /etc/apache2/sites-available/
 ```
 
 Deshabilitamos el sitio por defecto y habilitamos el nuestro
