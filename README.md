@@ -136,18 +136,43 @@ Deshabilitamos el sitio por defecto y habilitamos el nuestro
 ```
 $ sudo a2dissite 000-default.conf && sudo a2ensite site.conf
 ```
-Agregamos las siguiente lineas al final del archivo apache2.conf
+Editamos el archivo apache2.conf
 
 ```
 $ sudo vim /etc/apache2/apache2.conf 
+```
 
+Buscamos el siguiente bloque
+
+```
+<Directory /var/www/>
+        Options Indexes FollowSymLinks
+        AllowOverride None
+        Require all granted
+</Directory>
+```
+
+Y lo modificamos
+
+```
+<Directory /var/www/>
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Require all granted
+</Directory>
+```
+
+Al final agregamos lo siguiente
+
+```
 ServerTokens ProductOnly
 ServerSignature Off
 ```
 
-Reiniciamos Apache para aplicar los cambios realizados
+Activar MOD_REWRITE y reiniciamos Apache para aplicar los cambios realizados
 
 ```
+$ sudo a2enmod rewrite
 $ sudo systemctl restart apache2
 ```
 
