@@ -169,7 +169,7 @@ ServerTokens ProductOnly
 ServerSignature Off
 ```
 
-Activar MOD_REWRITE y reiniciamos Apache para aplicar los cambios realizados
+Activamos MOD_REWRITE y reiniciamos Apache para aplicar los cambios realizados
 
 ```
 $ sudo a2enmod rewrite
